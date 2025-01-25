@@ -12,7 +12,7 @@
     $insertsql = "INSERT INTO product(name, des, unit, unitprice) VALUES ('$name', '$des', '$unit','$unitprice')";
 
     $insertsql1 = "INSERT INTO purchase(name, des, unit, unitprice) VALUES ('$name', '$des', '$unit','$unitprice')";
-    if ($conn->query($insertsql1) === TRUE) 
+    if (mysqli_query($conn,$insertsql))
     {
       echo "";
     } else 
@@ -20,7 +20,7 @@
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
     
-    if ($conn->query($insertsql) === TRUE) 
+    if (mysqli_query($conn,$insertsql1)) 
     {
       echo "   New record created successfully";
     } else 
