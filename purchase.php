@@ -56,6 +56,7 @@
     {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
+    }
 ?>
 </body>
 </html>
