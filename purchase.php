@@ -14,21 +14,15 @@
     $insertsql1 = "INSERT INTO purchase(name, des, unit, unitprice) VALUES ('$name', '$des', '$unit','$unitprice')";
     if (mysqli_query($conn,$insertsql))
     {
-      echo "";
-    } else 
-    {
-      echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-    
-    if (mysqli_query($conn,$insertsql1)) 
-    {
-      echo "   New record created successfully";
+      echo  "<script>
+                    alert('Sucessfully Adding.');
+                    window.location = 'category_view.php';
+                    </script>";
     } else 
     {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
-    } 
 ?>
 <!DOCTYPE html>
 <html lang="en">
