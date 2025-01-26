@@ -1,28 +1,6 @@
 <?php
     include "header.php";
     include "connection.php";
-
-    if (isset($_POST['submit'])) 
-    {
-    $name=$_POST['name'];
-    $des=$_POST['des'];
-    $unit=$_POST['unit'];
-    $unitprice=$_POST['unitprice'];
-
-    $insertsql = "INSERT INTO product(name, des, unit, unitprice) VALUES ('$name', '$des', '$unit','$unitprice')";
-
-    $insertsql1 = "INSERT INTO purchase(name, des, unit, unitprice) VALUES ('$name', '$des', '$unit','$unitprice')";
-    if (mysqli_query($conn,$insertsql))
-    {
-      echo  "<script>
-                    alert('Sucessfully Adding.');
-                    window.location = 'category_view.php';
-                    </script>";
-    } else 
-    {
-      echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,5 +34,28 @@
   <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>
     </div>
+
+    <?php
+ if (isset($_POST['submit'])) 
+    {
+    $name=$_POST['name'];
+    $des=$_POST['des'];
+    $unit=$_POST['unit'];
+    $unitprice=$_POST['unitprice'];
+
+    $insertsql = "INSERT INTO product(name, des, unit, unitprice) VALUES ('$name', '$des', '$unit','$unitprice')";
+
+    $insertsql1 = "INSERT INTO purchase(name, des, unit, unitprice) VALUES ('$name', '$des', '$unit','$unitprice')";
+    if (mysqli_query($conn,$insertsql))
+    {
+      echo  "<script>
+                    alert('Sucessfully Adding.');
+                    window.location = 'category_view.php';
+                    </script>";
+    } else 
+    {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+?>
 </body>
 </html>
